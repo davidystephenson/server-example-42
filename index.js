@@ -33,6 +33,15 @@ app.get(
   getHomepage
 )
 
+app.get(
+  '/greeting/:user',
+  function (request, response) {
+    const message = `Welcome ${request.params.user}`
+
+    response.send(message)
+  }
+)
+
 app.listen(
   port,
   () => {
